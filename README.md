@@ -16,40 +16,79 @@
 
 ## 🛠️ Tech Stack
 
-- **Backend:** Java, Spring Boot, Hibernate, Maven
-- **Database:** PostgreSQL
-- **Testing:** Postman
-- **IDE:** IntelliJ / VS Code (optional)
-- **Architecture:** MVC (Model–View–Controller)
+| **Component**  | **Technology**        | **Purpose**                                           |
+| -------------------- | --------------------------- | ----------------------------------------------------------- |
+| Backend Framework    | Spring Boot 3.4.5           | Application infrastructure, RESTful API development         |
+| Programming Language | Java 11                     | Backend implementation                                      |
+| Database             | PostgreSQL 14               | Persistent data storage                                     |
+| ORM Tool             | Hibernate / Spring Data JPA | Object-relational mapping, database interaction             |
+| Frontend (basic)     | HTML5, CSS3, JavaScript     | User interface and dashboard visualization (not core focus) |
+| API Documentation    | Javadocs                    | Automated backend API documentation                         |
+| API Testing          | Postman                     | API endpoint validation                                     |
+| Version Control      | Git                         | Source code management                                      |
+| Build Tool           | Maven                       | Dependency management, build automation                     |
+| Development IDE      | Visual Studio Code          | Local development environment                               |
 
 ---
 
 ## 🧱 Entity Models
 
-- `Vehicle`: Basic vehicle info (ID, model, registration, etc.)
-- `FuelLog`: Tracks fuel efficiency and consumption per vehicle
-- `EngineData`: Logs engine performance parameters
+- **Vehicle Entity**: The central entity representing individual vehicles with their specifications including manufacturer, model, vehicle type, fuel type, engine type, and year of manufacture.
+- **FuelData Entity**: Records individual fuel consumption entries linked to specific vehicles, tracking liters used, distance traveled in kilometers, and timestamp of the entry.
+- **EngineData Entity**: Captures engine performance metrics linked to specific vehicles, including RPM measurements, temperature readings, and timestamp of the recording.
 
 ---
 
-## 🧪 API Testing
+## 📚 API Documentation
 
-All major endpoints were tested and validated using **Postman**. Sample collection and test cases are included in the `/postman/` folder (optional).
+The system exposes a comprehensive set of RESTful endpoints for managing vehicles, fuel data, and engine data.
+
+### 🚗 Vehicle APIs
+
+**Base Path:** `/api/vehicles`
+
+| Method | Endpoint               | Description                |
+| ------ | ---------------------- | -------------------------- |
+| GET    | `/api/vehicles`      | Retrieve all vehicles      |
+| GET    | `/api/vehicles/{id}` | Retrieve vehicle by ID     |
+| POST   | `/api/vehicles`      | Create a new vehicle       |
+| PUT    | `/api/vehicles/{id}` | Update an existing vehicle |
+| DELETE | `/api/vehicles/{id}` | Delete a vehicle           |
+
+### ⛽ Fuel Data APIs
+
+**Base Path:** `/api/vehicles/{id}/fuel-data`
+
+| Method | Endpoint                                        | Description                          |
+| ------ | ----------------------------------------------- | ------------------------------------ |
+| GET    | `/api/vehicles/{id}/fuel-data`                | Retrieve all fuel data for a vehicle |
+| GET    | `/api/vehicles/{id}/fuel-data/{fuel_id}`      | Retrieve specific fuel data entry    |
+| GET    | `/api/vehicles/{id}/fuel-data/totalfuel`      | Get total fuel usage                 |
+| GET    | `/api/vehicles/{id}/fuel-data/totaldistance`  | Get total distance                   |
+| GET    | `/api/vehicles/{id}/fuel-data/fuelefficiency` | Calculate fuel efficiency            |
+| POST   | `/api/vehicles/{id}/fuel-data`                | Create new fuel data                 |
+| PUT    | `/api/vehicles/{id}/fuel-data/{fuel_id}`      | Update fuel data entry               |
+| DELETE | `/api/vehicles/{id}/fuel-data/{fuel_id}`      | Delete fuel data entry               |
+
+### 🔧 Engine Data APIs
+
+**Base Path:** `/api/vehicles/{id}/engine-data`
+
+| Method | Endpoint                                       | Description                             |
+| ------ | ---------------------------------------------- | --------------------------------------- |
+| GET    | `/api/vehicles/{id}/engine-data`             | Retrieve all engine data for a vehicle  |
+| GET    | `/api/vehicles/{id}/engine-data/{engine_id}` | Retrieve specific engine data entry     |
+| GET    | `/api/vehicles/{id}/engine-data/Avg_RPM`     | Get average RPM for the vehicle         |
+| GET    | `/api/vehicles/{id}/engine-data/Avg_Temp`    | Get average temperature for the vehicle |
+| POST   | `/api/vehicles/{id}/engine-data`             | Create new engine data                  |
+| PUT    | `/api/vehicles/{id}/engine-data/{engine_id}` | Update engine data entry                |
+| DELETE | `/api/vehicles/{id}/engine-data/{engine_id}` | Delete engine data entry                |
 
 ---
 
-## ⚙️ Setup Instructions
+## 🖼️ Screenshots
 
-```bash
-# 1. Clone the repo
-git clone https://github.com/K09Gaurav/DriveTrack-Vehicle-Monitoring.git
-cd DriveTrack-Vehicle-Monitoring
 
-# 2. Set up PostgreSQL
-# Create a DB and update your DB credentials in src/main/resources/application.properties
-
-# 3. Build and run the app
-mvn spring-boot:run
-
-# 4. Test APIs
-# Use Postman or browser at: http://localhost:8080/api/vehicles (example endpoint)
+```
+<img src="Screenshots\DBDesign.png" alt="Database design">
+```
