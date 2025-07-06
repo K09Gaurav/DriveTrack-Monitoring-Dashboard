@@ -90,8 +90,9 @@ The system exposes a comprehensive set of RESTful endpoints for managing vehicle
 
 ![DB Design](https://github.com/K09Gaurav/DriveTrack-Monitoring-Dashboard/blob/main/Screenshots/DBDesign.png)
 
-![Front image](https://github.com/K09Gaurav/DriveTrack-Monitoring-Dashboard/blob/main/Screenshots/DetailsPage.png)
+
+![Dashboard Page](https://github.com/K09Gaurav/DriveTrack-Monitoring-Dashboard/blob/main/Screenshots/dashboard.png)
 
 ![Vehicle Page](https://github.com/K09Gaurav/DriveTrack-Monitoring-Dashboard/blob/main/Screenshots/VehiclePage.png)
 
-![Details Page](https://github.com/K09Gaurav/DriveTrack-Monitoring-Dashboard/blob/main/Screenshots/dashboard.png)
+![Details image](https://github.com/K09Gaurav/DriveTrack-Monitoring-Dashboard/blob/main/Screenshots/DetailsPage.png)
