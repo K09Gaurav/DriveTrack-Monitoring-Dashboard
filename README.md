@@ -88,7 +88,10 @@ The system exposes a comprehensive set of RESTful endpoints for managing vehicle
 
 ## 🖼️ Screenshots
 
+![DB Design](Screenshots\DBDesign.png)
 
-```
-<img src="Screenshots\DBDesign.png" alt="Database design">
-```
+![Front image](Screenshots\dashboard.png)
+
+![Vehicle Page](Screenshots\VehiclePage.png)
+
+![Details Page](Screenshots\DetailsPage.png)
