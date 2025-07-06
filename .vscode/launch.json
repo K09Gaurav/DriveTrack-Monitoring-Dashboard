@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Vehicle",
+            "request": "launch",
+            "mainClass": "com.Vehicleanalyzer.Models.Vehicle",
+            "projectName": "Analyzer"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-AnalyzerApplication<Analyzer>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.Vehicleanalyzer.AnalyzerApplication",
+            "projectName": "Analyzer",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

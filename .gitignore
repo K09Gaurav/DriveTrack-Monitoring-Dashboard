@@ -1,0 +1,23 @@
+# Maven build directory
+target/
+
+# Maven metadata
+.mvn/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# IDE settings
+*.iml
+.idea/
+*.log
+*.class
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code settings (optional)
+.vscode/

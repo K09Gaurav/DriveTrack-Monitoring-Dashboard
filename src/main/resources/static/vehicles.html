@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Analyzer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-car"></i>
+            <span>Vehicle Analyzer</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="vehicles.html" class="active">Vehicles</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="header-actions">
+            <h1>Vehicles</h1>
+            <button class="btn-primary" onclick="openAddVehicleModal()">
+                <i class="fas fa-plus"></i> Add Vehicle
+            </button>
+        </div>
+
+        <!-- Vehicles Table -->
+         <div class="table-container">
+            <table id="vehiclesTable">
+                <thead>
+                    <tr>
+                        <th>Manufacturer</th>
+                        <th>Model</th>
+                        <th>Year</th>
+                        <th>Type</th>
+                        <th>Engine Type</th>
+                        <th>Fuel Type</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="vehiclesTableBody">
+                    <!-- ADDed Dynamically -->
+                </tbody>
+            </table>
+         </div>
+    </main>
+
+    <!-- MODELS -->
+    <div id="addVehicleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Vehicle</h2>
+                <span class="close" onclick="closeAddVehicleModal()">&times;</span>
+            </div>
+            <form id="addVehicleForm" onsubmit="handleSubmitVehicle(event)">
+                <div class="form-group">
+                    <label for="manufacturer">Manufacturer</label>
+                    <input type="text" id="manufacturer" name="manufacturer" required>
+                </div>
+                <div class="form-group">
+                    <label for="model">Model</label>
+                    <input type="text" id="model" name="model" required>
+                </div>
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <input type="number" id="year" name="year_of_Mfg" required>
+                </div>
+                <div class="form-group">
+                    <label for="type">Vehicle Type</label>
+                    <select id="type" name="type" required>
+                        <option value="TwoWheeler">Two Wheeler</option>
+                        <option value="ThreeWheeler">Three Wheeler</option>
+                        <option value="FourWheeler">Four Wheeler</option>
+                        <option value="Truck">Truck</option>
+                        <option value="Bus">Bus</option>
+                        <option value="WaterCraft">Water Craft</option>
+                        <option value="AirCraft">Air Craft</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="engineType">Engine Type</label>
+                    <select id="engineType" name="engine_Type" required>
+                        <option value="INTERNAL_COMBUSTION_ENGINE">Internal Combustion Engine</option>
+                        <option value="ELECTRIC_MOTOR">Electric Motor</option>
+                        <option value="HYBRID_ENGINE">Hybrid Engine</option>
+                        <option value="HYDROGEN_FUEL_CELL">Hydrogen Fuel Cell</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fuelType">Fuel Type</label>
+                    <select id="fuelType" name="fuel_Type" required>
+                        <option value="Petrol">Petrol</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="Electric">Electric</option>
+                        <option value="Hybrid">Hybrid</option>
+                        <option value="CNG">CNG</option>
+                        <option value="LPG">LPG</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeAddVehicleModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">Submit Vehicle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/vehicles.js"></script>
+</body>
+</html>

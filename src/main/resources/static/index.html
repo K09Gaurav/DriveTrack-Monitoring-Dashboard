@@ -1,0 +1,67 @@
+<!--
+  Vehicle Analyzer Dashboard
+  Shows overall stats and charts for vehicles, engine types, and fuel types.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Analyzer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-car"></i>
+            <span>Vehicle Analyzer</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Dashboard</a></li>
+            <li><a href="vehicles.html">Vehicles</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h1>Dashboard</h1>
+        
+        <!-- Stats Cards -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>Total Vehicles</h3>
+                <p id="totalVehicles">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Vehicle Types</h3>
+                <p id="vehicleTypes">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Engine Types</h3>
+                <p id="engineTypes">0</p>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-container">
+            <div class="chart-card">
+                <h3>Vehicle Types Distribution</h3>
+                <canvas id="vehicleTypesChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Engine Types Distribution</h3>
+                <canvas id="engineTypesChart"></canvas>
+            </div>
+            <div class="chart-card full-width">
+                <h3>Fuel Types Distribution</h3>
+                <canvas id="fuelTypesChart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <!-- Chart.js and Dashboard Script -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html> 
