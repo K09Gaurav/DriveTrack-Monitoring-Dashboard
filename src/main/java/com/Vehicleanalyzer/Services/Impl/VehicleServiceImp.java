@@ -45,12 +45,24 @@ public class VehicleServiceImp implements VehicleService {
 
         if (existingVehicle != null){
             //will do all the updating here
+            if (vehicleDetails.getManufacturer() != null)
             existingVehicle.setManufacturer(vehicleDetails.getManufacturer());
-            existingVehicle.setModel(vehicleDetails.getModel());
-            existingVehicle.setYear_of_Mfg(vehicleDetails.getYear_of_Mfg());
-            existingVehicle.setType(vehicleDetails.getType());
-            existingVehicle.setEngine_Type(vehicleDetails.getEngine_Type());
-            existingVehicle.setFuel_Type(vehicleDetails.getFuel_Type());
+
+            if (vehicleDetails.getModel() != null)
+                existingVehicle.setModel(vehicleDetails.getModel());
+
+            if (vehicleDetails.getYear_of_Mfg() != 0)
+                existingVehicle.setYear_of_Mfg(vehicleDetails.getYear_of_Mfg());
+
+            if (vehicleDetails.getType() != null)
+                existingVehicle.setType(vehicleDetails.getType());
+
+            if (vehicleDetails.getEngine_Type() != null)
+                existingVehicle.setEngine_Type(vehicleDetails.getEngine_Type());
+
+            if (vehicleDetails.getFuel_Type() != null)
+                existingVehicle.setFuel_Type(vehicleDetails.getFuel_Type());
+            
             existingVehicle = saveVehicle(existingVehicle);
             return existingVehicle;
         }
