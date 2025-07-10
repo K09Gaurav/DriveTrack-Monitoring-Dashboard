@@ -39,9 +39,19 @@
 
 ---
 
+## 📬 API Testing
+
+You can import the full Postman collection for all DriveTrack endpoints:
+
+📂 `/postman/DriveTrack.postman_collection.json`
+
+Use `http://localhost:8081` as the base URL while testing.
+
+
 ## 📚 API Documentation
 
 The system exposes a comprehensive set of RESTful endpoints for managing vehicles, fuel data, and engine data.
+
 
 ### 🚗 Vehicle APIs
 

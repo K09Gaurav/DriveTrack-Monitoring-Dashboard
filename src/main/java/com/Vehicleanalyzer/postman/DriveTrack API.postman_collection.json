@@ -1,0 +1,635 @@
+{
+	"info": {
+		"_postman_id": "cfb9ab96-7caf-48af-b425-7fd52715492b",
+		"name": "DriveTrack API",
+		"description": "Collection of all DriveTrack REST API endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46647381"
+	},
+	"item": [
+		{
+			"name": "Retrieve all vehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve vehicle by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new vehicle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"manufacturer\": \"Suzuki\",\n    \"model\": \"Fronx\",\n    \"year_of_Mfg\": 2025,\n    \"type\": \"FourWheeler\",\n    \"engine_Type\": \"INTERNAL_COMBUSTION_ENGINE\",\n    \"fuel_Type\": \"Petrol\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update an existing vehicle",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fuel_Type\":\"Diesel\",\n    \"model\": \"wow\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles/103",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles",
+						"103"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a vehicle",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles/103",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles",
+						"103"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new fuel data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"liters_used\": 40.5,\n    \"distance_km\": 120.0,\n    \"timestamp\": \"2024-07-10T15:30:00\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles/1/fuel-data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles",
+						"1",
+						"fuel-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve all fuel data for a vehicle",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles/1/fuel-data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles",
+						"1",
+						"fuel-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve specific fuel data entry",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles/1/fuel-data/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles",
+						"1",
+						"fuel-data",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update fuel data entry",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"liters_used\": 42.0,\n    \"distance_km\": 170.0,\n    \"timestamp\": \"2025-07-09T10:00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles/1/fuel-data/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles",
+						"1",
+						"fuel-data",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete fuel data entry",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"liters_used\": 42.0,\n    \"distance_km\": 170.0,\n    \"timestamp\": \"2025-07-09T10:00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles/1/fuel-data/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles",
+						"1",
+						"fuel-data",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get total fuel usage",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles/1/fuel-data/totalfuel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles",
+						"1",
+						"fuel-data",
+						"totalfuel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get total distance",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles/1/fuel-data/totaldistance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles",
+						"1",
+						"fuel-data",
+						"totaldistance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calculate fuel efficiency",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles/1/fuel-data/fuelefficiency",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles",
+						"1",
+						"fuel-data",
+						"fuelefficiency"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve all engine data for a vehicle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles/1/engine-data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles",
+						"1",
+						"engine-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new engine data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rpm\": 2300,\n    \"temperature\": 75.5,\n    \"timestamp\": \"2025-07-09T14:45:00\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles/1/engine-data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles",
+						"1",
+						"engine-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete engine data entry",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rpm\": 2300,\n    \"temperature\": 75.5,\n    \"timestamp\": \"2025-07-09T14:45:00\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles/1/engine-data/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles",
+						"1",
+						"engine-data",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update engine data entry Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rpm\": 2200,\n    \"temperature\": 73.5,\n    \"timestamp\": \"2025-07-10T14:55:00\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles/1/engine-data/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles",
+						"1",
+						"engine-data",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve specific engine data entry",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"RPM\": 2300,\n    \"temperature\": 75.5,\n    \"timestamp\": \"2025-07-09T14:45:00\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles/1/engine-data/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles",
+						"1",
+						"engine-data",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get average RPM for the vehicle",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"RPM\": 2300,\n    \"temperature\": 75.5,\n    \"timestamp\": \"2025-07-09T14:45:00\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles/1/engine-data/Avg_RPM",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles",
+						"1",
+						"engine-data",
+						"Avg_RPM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get average temperature for the vehicle",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"RPM\": 2300,\n    \"temperature\": 75.5,\n    \"timestamp\": \"2025-07-09T14:45:00\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/vehicles/1/engine-data/Avg_Temp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"vehicles",
+						"1",
+						"engine-data",
+						"Avg_Temp"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
