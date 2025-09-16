@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.Vehicleanalyzer</groupId>
-	<artifactId>Analyzer</artifactId>
+	<artifactId>DriveTrack</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Analyzer</name>
-	<description>project for Spring Boot</description>
+	<description>Vehicle performance dashboard built with Spring Boot, Hibernate, and PostgreSQL. </description>
 	<url />
 	<licenses>
 		<license />

@@ -1,0 +1,89 @@
+version: '3.8'
+
+# Services section - defines the containers we want to run
+# Each service will become a separate Docker container
+services:
+
+  # PostgreSQL Database Service
+  postgres:
+    # Use the official PostgreSQL image from Docker Hub, version 15
+    image: postgres:17-alpine
+
+    # Custom name for this container (easier to reference in commands)
+    container_name: driverTrack-postgres
+
+    # Environment variables for configuring PostgreSQL
+    environment :
+      # Database name that will be created automatically when container starts
+      POSTGRES_DB : driveTrackDB
+
+      # Database username (matches THE application.properties)
+      POSTGRES_USER : postgres
+
+      # Database password (matches THE application.properties)
+      POSTGRES_PASSWORD: password
+
+    # Port mapping: expose PostgreSQL to host machine and other containers
+    # Format: " host_port:container_port " - maps host 5432 to container 5432
+    ports :
+      - "5432:5432"
+
+    # Persistent storage - keeps database data safe even if container is removed
+    # postgres_data volume will store database files at /var/lib/postgresql/data
+    volumes: [postgres_data:/var/lib/postgresql/data]
+
+    # Network connection - attach this container to our custom network
+    networks : [driveTrack-network]
+
+
+  # Spring Boot Application Service
+  app:
+    # Build the Docker image using the Dockerfile in the current directory (.)
+    build: .
+
+    # Custom name for application Container
+    container_name: driverTrack-app
+
+    # Port mapping: expose Spring Boot app to host machine
+    # Host can access app at localhost:8081, container uses port 8081 internally
+    ports:
+      - "8081:8081"
+
+    # Environment variables that will override application.properties
+    environment:
+      SPRING_DATASOURCE_URL : jdbc:postgresql://postgres:5432/driveTrackDB
+
+      # Database username (overrides application.properties)
+      SPRING_DATASOURCE_USERNAME: postgres
+
+      # Database password (overrides application.properties)
+      SPRING_DATASOURCE_PASSWORD: password
+
+      # Server Port (overrides application.properties)
+      SERVER_PORT : 8081
+
+    # Dependency management: ensures PostgreSQL starts before this application
+    # This helps prevent connection errors during application startup
+    depends_on:
+      - postgres
+
+    # Network connection - attach to same network as PostgreSQL
+    networks: [driveTrack-network]
+
+
+
+# Volumes section - defines persistent data storage
+# Volumes survive container removal and can be shared between containers
+volumes:
+  postgres_data :
+    # Docker will automatically create this volume if it doesn't exist
+    # Volume data is stored in Docker's storage area (/var/lib/docker/volumes/)
+
+
+# Network Section - defines custom network for container communication
+# Custom network provide better isolation
+networks:
+  driveTrack-network :
+    # Network Driver type - Bridge creates an internal network
+    # allows isolated communication (bridge)
+    driver : bridge
