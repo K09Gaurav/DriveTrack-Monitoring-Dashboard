@@ -14,6 +14,40 @@
 
 ---
 
+## 🐳 Deployment with Docker
+
+DriveTrack now includes full Docker support for easy setup and deployment.
+
+- **Dockerfile**: Containerizes the Spring Boot application
+- **docker-compose.yml**: Spins up both the Spring Boot app and PostgreSQL database with a single command
+
+### Steps to Run
+
+1. Build the project jar:
+   ```bash
+   mvn clean package
+    ```
+2. Start the containers:
+    ```bash
+    docker-compose up --build
+    ```
+3. Access the Application at:
+    ```bash
+    http://localhost:8081
+    ```
+PostgreSQL runs inside a container with the database driveTrackDB, and the app automatically connects to it using environment variables defined in docker-compose.yml.
+
+👉 You can also connect to this database using pgAdmin or any local SQL client after the containers are running.
+```bash
+Host: localhost
+Port: 5455
+Database: driveTrackDB
+User: postgres
+Password: password
+```
+
+---
+
 ## 🛠️ Tech Stack
 
 | **Component**  | **Technology**        | **Purpose**                                           |

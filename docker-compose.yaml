@@ -26,7 +26,7 @@ services:
     # Port mapping: expose PostgreSQL to host machine and other containers
     # Format: " host_port:container_port " - maps host 5432 to container 5432
     ports :
-      - "5432:5432"
+      - "5455:5432"
 
     # Persistent storage - keeps database data safe even if container is removed
     # postgres_data volume will store database files at /var/lib/postgresql/data
